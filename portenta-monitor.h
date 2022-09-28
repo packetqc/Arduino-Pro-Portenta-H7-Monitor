@@ -1,5 +1,9 @@
 #pragma once
 
+//===================================================================================================
+// 
+//===================================================================================================
+
 #include "portenta-led.h"
 
 
@@ -22,6 +26,8 @@ class MPMON {
     Led   led;
 
     bool Status();
+    bool Visible(bool state);
+    bool Enable(bool state);
     bool Init();
     bool Debug(String message);
 
