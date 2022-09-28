@@ -23,11 +23,8 @@ class MPMON {
 
     bool Status();
     bool Init();
-    bool Visible(bool state);
-    bool Enable(bool state);
     bool Debug(String message);
 
-    void MorseCode();
 };
 
 extern MPMON &mpMON;
