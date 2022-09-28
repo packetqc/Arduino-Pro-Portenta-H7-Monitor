@@ -3,24 +3,46 @@
 
 Led::Led()
 {
+  unitTime = 250;
+  unitCharTime = unitTime*3;
+  unitWordTime = unitTime*7;
+
   _pin = LED_BUILTIN;
   pinMode(_pin, OUTPUT);
 }
 
+void Led::on() {
+  digitalWrite(_pin, LOW);
+}
+
+void Led::off() {
+  digitalWrite(_pin, HIGH);
+}
+
+void Led::unit() {
+  delay(unitTime);
+}
+
+void Led::spaceLetter() {
+  delay(unitCharTime);
+}
+
+void Led::spaceWord() {
+  delay(unitWordTime);
+}
+
 void Led::dot()
 {
-  digitalWrite(_pin, HIGH);
-  delay(250);
   digitalWrite(_pin, LOW);
-  delay(250);  
+  unit();
+  digitalWrite(_pin, HIGH);
 }
 
 void Led::dash()
 {
-  digitalWrite(_pin, HIGH);
-  delay(1000);
   digitalWrite(_pin, LOW);
-  delay(250);
+  spaceLetter();
+  digitalWrite(_pin, HIGH);
 }
 
 void Led::green(bool state) {

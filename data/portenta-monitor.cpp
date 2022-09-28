@@ -11,44 +11,24 @@ bool MPMON::Status() {
   return status;
 }
 
-void MPMON::MorseCode(std::string phrase) {
+void MPMON::MorseCode(String phrase) {
   std::transform(phrase.begin(), phrase.end(), phrase.begin(), ::toupper);
-
-  for (int i = 0; i<phrase.length(); i++) {
-    for (int counter = 0; counter < 37; counter++) {
-      if (phrase.at(i) == text[counter]) {
-
-        std::string toMorse;
-        if(counter != 36)
-          toMorse = (std::string)morse[counter].c_str();
-        else
-          continue;
-
+  for (int i = 0; i<phrase.length(); ++i) {
+    for (int counter = 0; counter < 36; counter++) {
+      if (phrase.charAt(i) == text[counter]) {
+        String toMorse = ""+morse[i];
+        
         for(int j=0; j<toMorse.length(); j++) {
-          if(toMorse.at(j) == '.') {
+          if(toMorse.charAt(j) == '.') {
             led.dot();
           }
-          else if(toMorse.at(j) == '-') {
+          else if(toMorse.charAt(j) == '-') {
             led.dash();
-          }
-
-          if( j != toMorse.length()-1 ) {
-            led.unit();
           }
         }
       }
     }
-
-    if( i != phrase.length()-1 ) {
-        if(phrase.at(i+1) == ' ') {
-          led.spaceWord();
-        }
-        else {
-          led.spaceLetter();
-        }
-      }
   }
-
 }
 
 bool MPMON::Visible(bool state) {
@@ -94,8 +74,7 @@ bool MPMON::Debug(String incoming) {
   }
       
   if(visible) {
-    led.dot(); 
-    led.unit();   
+    led.dot();    
     led.dot();     
   }      
   
