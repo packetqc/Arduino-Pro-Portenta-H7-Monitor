@@ -5,21 +5,47 @@ Led::Led()
 {
   _pin = LED_BUILTIN;
   pinMode(_pin, OUTPUT);
+
+  init();
+}
+
+void Led::init() {
+  green(true);
+  delay(1000);
+  green(false);
+  delay(1000);
+  blue(true);
+  delay(1000);
+  blue(false);
+  delay(1000);
+  red(true);
+  delay(1000);
+  red(false);
+  delay(1000);
+
+  green(true);blue(true);red(true);
+  dot(); dot(); dot();
+  delay(1000);
+  dash(); dash();
+  delay(1000);
+  dot(); dot(); dot();
+  delay(1000);
+  green(false);blue(false);red(false);
 }
 
 void Led::dot()
 {
-  digitalWrite(_pin, HIGH);
-  delay(250);
   digitalWrite(_pin, LOW);
+  delay(250);
+  digitalWrite(_pin, HIGH);
   delay(250);  
 }
 
 void Led::dash()
 {
-  digitalWrite(_pin, HIGH);
-  delay(1000);
   digitalWrite(_pin, LOW);
+  delay(1000);
+  digitalWrite(_pin, HIGH);
   delay(250);
 }
 
