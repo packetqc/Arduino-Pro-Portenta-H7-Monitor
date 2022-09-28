@@ -5,8 +5,6 @@ Led::Led()
 {
   _pin = LED_BUILTIN;
   pinMode(_pin, OUTPUT);
-
-  init();
 }
 
 void Led::init() {
@@ -23,14 +21,14 @@ void Led::init() {
   red(false);
   delay(1000);
 
-  green(true);blue(true);red(true);
-  dot(); dot(); dot();
-  delay(1000);
-  dash(); dash();
-  delay(1000);
-  dot(); dot(); dot();
-  delay(1000);
-  green(false);blue(false);red(false);
+  // green(true);blue(true);red(true);
+  // dot(); dot(); dot();
+  // delay(1000);
+  // dash(); dash();
+  // delay(1000);
+  // dot(); dot(); dot();
+  // delay(1000);
+  // green(false);blue(false);red(false);
 }
 
 void Led::dot()
