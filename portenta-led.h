@@ -7,7 +7,6 @@ class Led
 {
   public:
     Led();
-    void init();
     void dot();
     void dash();
     void green(bool state);

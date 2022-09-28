@@ -10,8 +10,6 @@ bool MPMON::Status() {
 bool MPMON::Init() {
   bool retour = false;
 
-  led.init();
-  
   if(debug) {
     Serial.begin(115200);
     
