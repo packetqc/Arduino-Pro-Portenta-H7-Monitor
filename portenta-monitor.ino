@@ -4,8 +4,8 @@
 // 
 //===================================================================================================
 void setup() {
-  mpMON.Enable(false);
-  mpMON.Visible(false);
+  // mpMON.Enable(false);
+  // mpMON.Visible(false);
   mpMON.Init();
   
   mpMON.Debug("Message 1");
