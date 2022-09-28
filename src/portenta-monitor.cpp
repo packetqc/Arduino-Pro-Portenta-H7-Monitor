@@ -1,10 +1,28 @@
 #include "portenta-monitor.h"
 
+#include <string>
+#include <iostream>
+#include <algorithm>
+
 //===================================================================================================
 // 
 //===================================================================================================
 bool MPMON::Status() {
   return status;
+}
+
+void MPMON::MorseCode() {
+
+}
+
+bool MPMON::Visible(bool state) {
+  visible = state;
+  return visible;
+}
+
+bool MPMON::Enable(bool state) {
+  debug = state;
+  return debug;
 }
 
 bool MPMON::Init() {
