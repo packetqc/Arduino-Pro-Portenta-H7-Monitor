@@ -7,31 +7,39 @@ void setup() {
   // mpMON.Enable(false);
   // mpMON.Visible(false);
   mpMON.Init();
-  
   mpMON.Debug("Message 1");
-  mpMON.Debug("Message 2");
-  mpMON.Debug("Message 3");
-  mpMON.Debug("Message 4");
-  mpMON.Debug("Message 5");
-  mpMON.Debug("Message 6");
-  mpMON.Debug("Message 7");
-  mpMON.Debug("Message 8");
-  mpMON.Debug("Message 9");
-  mpMON.Debug("Message 10");
-  mpMON.Debug("Message 11");
-  mpMON.Debug("Message 12");
-  mpMON.Debug("Message 13");
-  mpMON.Debug("Message 14");
-  mpMON.Debug("Message 15");
-  mpMON.Debug("Message 16");
-  mpMON.Debug("Message 17");
-  mpMON.Debug("Message 18");
-  mpMON.Debug("Message 19");
-  mpMON.Debug("Message 20");
-  mpMON.Debug("Message 21");
-  mpMON.Debug("Message 22");
-  mpMON.Debug("Message 23");
-  mpMON.Debug("Message 24");
+  
+  while(true) {    
+    delay(3000);        
+    mpMON.MorseCode("sos");
+    delay(3000);        
+    mpMON.MorseCode("sos sos");
+  }
+  
+  
+  // mpMON.Debug("Message 2");
+  // mpMON.Debug("Message 3");
+  // mpMON.Debug("Message 4");
+  // mpMON.Debug("Message 5");
+  // mpMON.Debug("Message 6");
+  // mpMON.Debug("Message 7");
+  // mpMON.Debug("Message 8");
+  // mpMON.Debug("Message 9");
+  // mpMON.Debug("Message 10");
+  // mpMON.Debug("Message 11");
+  // mpMON.Debug("Message 12");
+  // mpMON.Debug("Message 13");
+  // mpMON.Debug("Message 14");
+  // mpMON.Debug("Message 15");
+  // mpMON.Debug("Message 16");
+  // mpMON.Debug("Message 17");
+  // mpMON.Debug("Message 18");
+  // mpMON.Debug("Message 19");
+  // mpMON.Debug("Message 20");
+  // mpMON.Debug("Message 21");
+  // mpMON.Debug("Message 22");
+  // mpMON.Debug("Message 23");
+  // mpMON.Debug("Message 24");
 }
 
 //===================================================================================================
