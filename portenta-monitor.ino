@@ -1,4 +1,5 @@
 #include "src/portenta-monitor.h"
+#include "src/portenta-performance.h"
 
 //===================================================================================================
 // 
@@ -6,17 +7,52 @@
 void setup() {
   // mpMON.Enable(false);
   // mpMON.Visible(false);
+  
   mpMON.Init();
   mpMON.Debug("Message 1");
   
-  while(true) {    
-    delay(3000);        
-    mpMON.MorseCode("sos");
-    delay(3000);        
-    mpMON.MorseCode("sos sos");
+  mpPERF.Run();
+
+  // //===================================================================================================
+  // // 
+  // //===================================================================================================
+  // #if MBED_MAJOR_VERSION == 2
+  //     wait_ms(5000);
+  // #elif MBED_MAJOR_VERSION == 5
+  //     thread_sleep_for(5000);
+  // #else
+  //     ThisThread::sleep_for(5000);
+  // #endif
+
+  // bool testQueue = true;
+  // while(testQueue) {
+  //   if(!mpLED.ProtectionQueue()) {
+  //     mpMON.MorseCode("sos sos");          
+  //   } 
+  //   else {
+  //     testQueue = false;
+  //     mpLED.Reset();
+  //   }      
+  // }
+
+  //===================================================================================================
+  // 
+  //===================================================================================================
+  while(true) {   
+    mpMON.MorseCode("sos sos");          
+    
+    #if MBED_MAJOR_VERSION == 2
+        wait_ms(30000);
+    #elif MBED_MAJOR_VERSION == 5
+        thread_sleep_for(30000);
+    #else
+        ThisThread::sleep_for(30000);
+    #endif
   }
   
-  
+  //===================================================================================================
+  // 
+  //===================================================================================================
   // mpMON.Debug("Message 2");
   // mpMON.Debug("Message 3");
   // mpMON.Debug("Message 4");

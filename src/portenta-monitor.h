@@ -1,11 +1,25 @@
-#pragma once
+#ifndef PORTENTA_MONITOR_H
+#define PORTENTA_MONITOR_H
 
 #include "portenta-led.h"
 
+//===================================================================================================
+// 
+//===================================================================================================
+#include "mbed.h"
+using namespace mbed;
+using namespace rtos;
 
+//===================================================================================================
+// 
+//===================================================================================================
 class MPMON {
   private:   
-    bool  status;  
+    bool  status = false;  
+    long  counter = 1;
+
+    Mutex holdIt;
+    Mutex holdItForWhile;
     
     MPMON() = default;  // Make constructor private  
 
@@ -31,7 +45,6 @@ class MPMON {
     bool  visible           = true;
     bool  debug             = true;         //enable serial output
     bool  serialPortEnabled = false;
-    Led   led;
 
     bool Status();
     bool Init();
@@ -39,8 +52,11 @@ class MPMON {
     bool Visible(bool state);
     bool Enable(bool state);
     bool Debug(String message);
+    bool HoldItForWhile(bool state);
 
     void MorseCode(std::string phrase);
 };
 
 extern MPMON &mpMON;
+
+#endif
