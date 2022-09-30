@@ -58,6 +58,8 @@ void Performance::StackPerformance(void)
         );             
     }
     mpMON.Debug(String());
+
+    free(stats);
 }
 
 //===================================================================================================
